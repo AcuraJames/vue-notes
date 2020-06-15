@@ -4,8 +4,8 @@
     style="width:18px;height:18px"
     viewBox="0 0 24 24"
     :fill="fill"
-    @mouseover="isHover=true"
-    @mouseout="isHover=false"
+    @mouseover="isHover = true"
+    @mouseout="isHover = false"
   >
     <title>{{ title }}</title>
     <path :d="path" />
@@ -43,9 +43,7 @@ export default {
       return this.name
     },
     fill() {
-      return this.isHover
-        ? this.hoverColor
-        : this.color
+      return this.isHover ? this.hoverColor : this.color
     }
   }
 }

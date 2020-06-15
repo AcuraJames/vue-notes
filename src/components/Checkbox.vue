@@ -8,7 +8,7 @@
       :disabled="disabled"
     />
     <span class="checkmark"></span>
-    <span :class="{checked:checked}">
+    <span :class="{ checked: checked }">
       {{ label }}
     </span>
   </label>
@@ -24,14 +24,14 @@ export default {
     },
     label: {
       type: String,
-      default: '',
+      default: ''
     },
     disabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  data () {
+  data() {
     return {
       checked: false,
       lazyValue: this.value
@@ -51,7 +51,7 @@ export default {
       }
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
@@ -83,10 +83,10 @@ export default {
   }
 }
 .checkbox input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
