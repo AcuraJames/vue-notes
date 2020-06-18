@@ -3,91 +3,91 @@
     "id": "1",
     "name": "Todo 1",
     "todos": [
-      "one dog",
-      "two cats",
-      "three trees"
+      { "todo": "one dog", "done": false },
+      { "todo": "two cats", "done": false },
+      { "todo": "three trees", "done": false }
     ]  
   },
   {
     "id": "2",
     "name": "Todo 2",
     "todos": [
-      "furious four",
-      "high five",
-      "SEX",
-      "seven nation army",
-      "eighty eight"
+      { "todo": "furious four", "done": false },
+      { "todo": "high five", "done": false },
+      { "todo": "SEX", "done": false },
+      { "todo": "seven nation army", "done": false },
+      { "todo": "eighty eight", "done": false }
     ]  
   },
   {
     "id": "3",
     "name": "Todo one hundred millions pieces of shit",
     "todos": [
-      "ninety ninety two",
-      "ten",
-      "SEX",
-      "seven eleven",
-      "twelve proper"
+      { "todo": "ninety ninety two", "done": false },
+      { "todo": "ten", "done": false },
+      { "todo": "SEX", "done": false },
+      { "todo": "seven eleven", "done": false },
+      { "todo": "twelve proper", "done": false }
     ]  
   },
   {
     "id": "4",
     "name": "Todo 4",
     "todos": [
-      "vossi bop",
-      "cinnabon",
-      "dossie doe",
-      "tasty toasts",
-      "hopsey hoe",
-      "psyho said sit down bitches",
-      "roses are red",
-      "violets are blue",
-      "omae wa mou shindeiru"
+      { "todo": "vossi bop", "done": false },
+      { "todo": "cinnabon", "done": false },
+      { "todo": "dossie doe", "done": false },
+      { "todo": "tasty toasts", "done": false },
+      { "todo": "hopsey hoe", "done": false },
+      { "todo": "psyho said sit down bitches", "done": false },
+      { "todo": "roses are red", "done": false },
+      { "todo": "violets are blue", "done": false },
+      { "todo": "omae wa mou shindeiru", "done": false }
     ]  
   },
   {
     "id": "5",
     "name": "Todo Lst",
     "todos": [
-      "lorem ipsum",
-      "SEX"
+      { "todo": "lorem ipsum", "done": false },
+      { "todo": "SEX", "done": false }
     ]  
   },
   {
     "id": "6",
     "name": "Todo SEX",
     "todos": [
-      "furious four",
-      "high five",
-      "SEX",
-      "seven nation army",
-      "eighty eight"
+      { "todo": "furious four", "done": false },
+      { "todo": "high five", "done": false },
+      { "todo": "SEX", "done": false },
+      { "todo": "seven nation army", "done": false },
+      { "todo": "eighty eight", "done": false }
     ]  
   },
   {
     "id": "7",
     "name": "Todo swvw",
     "todos": [
-      "ninety ninety two",
-      "ten",
-      "SEX",
-      "seven eleven",
-      "twelve proper"
+      { "todo": "ninety ninety two", "done": false },
+      { "todo": "ten", "done": false },
+      { "todo": "SEX", "done": false },
+      { "todo": "seven eleven", "done": false },
+      { "todo": "twelve proper", "done": false }
     ]  
   },
   {
     "id": "8",
     "name": "Todo 8",
     "todos": [
-      "vossi bop",
-      "cinnabon",
-      "dossie doe",
-      "tasty toasts",
-      "hopsey hoe",
-      "psyho said sit down bitches",
-      "roses are red",
-      "violets are blue",
-      "omae wa mou shindeiru"
+      { "todo": "vossi bop", "done": false },
+      { "todo": "cinnabon", "done": false },
+      { "todo": "dossie doe", "done": false },
+      { "todo": "tasty toasts", "done": false },
+      { "todo": "hopsey hoe", "done": false },
+      { "todo": "psyho said sit down bitches", "done": false },
+      { "todo": "roses are red", "done": false },
+      { "todo": "violets are blue", "done": false },
+      { "todo": "omae wa mou shindeiru", "done": false }
     ]  
   }
 ]

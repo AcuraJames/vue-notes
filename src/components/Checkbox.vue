@@ -23,7 +23,7 @@ export default {
       default: false
     },
     label: {
-      type: String,
+      type: [String, Object],
       default: ''
     },
     disabled: {
@@ -48,7 +48,17 @@ export default {
       set(val) {
         this.lazyValue = val
         this.checked = !!val
+        this.$emit('input', val)
       }
+    }
+  },
+  watch: {
+    value: {
+      handler(val) {
+        this.lazyValue = val
+        this.checked = !!val
+      },
+      immediate: true
     }
   }
 }

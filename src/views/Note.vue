@@ -4,10 +4,16 @@
     <div class="note-wrapper">
       <ul class="note">
         <li v-for="(todo, index) in todos" :key="index" class="note__item">
-          <Checkbox :label="todo" />
+          <Checkbox
+            :label="todo.todo"
+            :value="todo.done"
+            @input="change($event, index)"
+          />
         </li>
       </ul>
     </div>
+    <button :disabled="!isChanged" @click="discard">Discard</button>
+    <button :disabled="!isChanged" @click="save">Save</button>
   </div>
 </template>
 
@@ -22,7 +28,10 @@ export default {
   data() {
     return {
       name: "I'm new Todo",
-      notes: TODOS || []
+      notes: TODOS || [],
+      checked: [],
+      unchecked: [],
+      isChanged: false
     }
   },
   computed: {
@@ -32,6 +41,25 @@ export default {
     todos() {
       const todos = this.notes.find((note) => note.id === this.noteId)
       return todos.todos
+    }
+  },
+  methods: {
+    change(val, index) {
+      this.isChanged = true
+      this.todos.map((todo, idx) => {
+        if (idx === index) {
+          todo.done = val
+          val ? this.checked.push(todo) : this.unchecked.push(todo)
+        }
+      })
+    },
+    discard() {
+      this.checked.map((todo) => (todo.done = false))
+      this.unchecked.map((todo) => (todo.done = true))
+      this.isChanged = false
+    },
+    save() {
+      this.$router.push({ path: '/' })
     }
   }
 }

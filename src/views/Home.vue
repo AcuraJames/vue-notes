@@ -30,7 +30,7 @@
       </div>
       <ul class="todo-list__list">
         <li v-for="(item, index) in todo.todos" :key="index" class="list__item">
-          <Checkbox disabled :label="item" />
+          <Checkbox disabled :label="item.todo" />
         </li>
         <li v-if="todos.length > 5" class="list__item--more">...</li>
       </ul>
