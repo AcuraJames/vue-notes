@@ -1,6 +1,15 @@
 <template>
   <div>
-    <h3>{{ name }}</h3>
+    <input
+      type="text"
+      ref="title"
+      class="title"
+      :value="title"
+      :placeholder="title"
+      :disabled="!isTitleChanged"
+      @input="changeTitle($event)"
+    />
+    <em @click="editTitle">&nbsp; i</em>
     <div class="note-wrapper">
       <ul class="note">
         <li v-for="(todo, index) in todos" :key="index" class="note__item">
@@ -12,8 +21,12 @@
         </li>
       </ul>
     </div>
-    <button :disabled="!isChanged" @click="discard">Discard</button>
-    <button :disabled="!isChanged" @click="save">Save</button>
+    <button :disabled="!isChanged" @click="discard">
+      Discard
+    </button>
+    <button :disabled="!isChanged" @click="save">
+      Save
+    </button>
   </div>
 </template>
 
@@ -27,11 +40,13 @@ export default {
   },
   data() {
     return {
-      name: "I'm new Todo",
+      title: "I'm new Todo",
+      newTitle: '',
       notes: TODOS || [],
       checked: [],
       unchecked: [],
-      isChanged: false
+      isChanged: false,
+      isTitleChanged: false
     }
   },
   computed: {
@@ -44,6 +59,15 @@ export default {
     }
   },
   methods: {
+    editTitle() {
+      this.isTitleChanged = true
+      this.$refs.title.focus()
+    },
+    changeTitle(e) {
+      // TODO confirm modal before change
+      this.isChanged = true
+      this.newTitle = e.target.value
+    },
     change(val, index) {
       this.isChanged = true
       this.todos.map((todo, idx) => {
@@ -59,6 +83,7 @@ export default {
       this.isChanged = false
     },
     save() {
+      this.title = this.newTitle
       this.$router.push({ path: '/' })
     }
   }
@@ -66,8 +91,20 @@ export default {
 </script>
 
 <style lang="scss">
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: forestgreen;
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
 .note-wrapper {
   margin: auto;
+  margin-top: 30px;
   max-width: 300px;
 }
 .note {
