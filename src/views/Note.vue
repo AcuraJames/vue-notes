@@ -1,5 +1,9 @@
 <template>
   <div>
+    <ConfirmModal v-if="showModal" @confirm="confirm" @deny="deny">
+      <template v-slot:header>Отменить изменения</template>
+      <template v-slot:body>Отменить изменения?</template>
+    </ConfirmModal>
     <input
       type="text"
       ref="title"
@@ -33,10 +37,12 @@
 <script>
 import TODOS from '../todos.json'
 import Checkbox from '../components/Checkbox'
+import ConfirmModal from '../components/ConfirmModal'
 export default {
   name: 'Note',
   components: {
-    Checkbox
+    Checkbox,
+    ConfirmModal
   },
   data() {
     return {
@@ -46,7 +52,8 @@ export default {
       checked: [],
       unchecked: [],
       isChanged: false,
-      isTitleChanged: false
+      isTitleChanged: false,
+      showModal: false
     }
   },
   computed: {
@@ -78,13 +85,20 @@ export default {
       })
     },
     discard() {
-      this.checked.map((todo) => (todo.done = false))
-      this.unchecked.map((todo) => (todo.done = true))
-      this.isChanged = false
+      this.showModal = true
     },
     save() {
       this.title = this.newTitle
       this.$router.push({ path: '/' })
+    },
+    deny() {
+      this.showModal = false
+    },
+    confirm() {
+      this.checked.map((todo) => (todo.done = false))
+      this.unchecked.map((todo) => (todo.done = true))
+      this.isChanged = false
+      this.showModal = false
     }
   }
 }
